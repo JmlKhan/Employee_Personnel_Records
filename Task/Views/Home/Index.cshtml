@@ -1,0 +1,80 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Personnel Records";
+    Layout = "_Layout";
+}
+
+@*@model IEnumerable<Employee>*@
+
+
+@{  
+    <form asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data">
+        <input type="file" name="postedFile" id="inputFile"/>
+        @if( @Html.Id("inputFile").Any())
+        {
+            <input type="submit" value="Import" />
+        }
+        
+    </form>
+}
+    
+
+    <h3>Processed Rows:  @ViewBag.C</h3>
+ 
+ @{
+     <form asp-controller="Home" asp-action="Index" method="get">
+        @Html.TextBox("Search") <input type="submit" value="Search"/>
+    </form>
+}
+    @*Table body*@
+    <body>
+        <table cellpadding="10" cellspacing="14">
+        <tr>
+            <th>Payroll Number</th>
+            <th>Forenames</th>
+            <th>Surname</th>
+            <th>Date of Birth</th>
+            <th>Telephone</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Address2</th>
+            <th>Postcode</th>
+            <th>Email Home</th>
+            <th>Start Date</th>
+        </tr>
+       
+          @foreach (Employee emp in Model)
+          {
+            <tr>
+                <td>@emp.Payroll_Number</td>
+                <td>@emp.Forenames</td>
+                <td>@emp.Surname</td>
+                <td>@emp.Date_of_Birth</td>
+                <td>@emp.Telephone</td>
+                <td>@emp.Mobile</td>
+                <td>@emp.Address</td>
+                <td>@emp.Address_2</td>
+                <td>@emp.Postcode </td>
+                <td>@emp.Email_Home</td>
+                <td>@emp.Start_Date</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { Payroll_Number=@emp.Payroll_Number})</td>
+                </tr>
+            }
+        </table>
+    </body>
+ 
+    
+    
+   
+     
+     
+
+
+
+
+
+
+
+
+    
