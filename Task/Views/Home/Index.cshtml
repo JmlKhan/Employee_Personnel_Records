@@ -7,7 +7,7 @@
 
 @*@model IEnumerable<Employee>*@
 
-
+    @*form for upload file and import*@
 @{  
     <form asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data">
         <input type="file" name="postedFile" id="inputFile"/>
@@ -19,9 +19,11 @@
     </form>
 }
     
-
+     @*showing how many rows successfully proccessed*@
     <h3>Processed Rows:  @ViewBag.C</h3>
- 
+   
+    
+    @*SearchBar*@
  @{
      <form asp-controller="Home" asp-action="Index" method="get">
         @Html.TextBox("Search") <input type="submit" value="Search"/>

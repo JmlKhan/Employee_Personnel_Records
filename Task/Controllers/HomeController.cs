@@ -21,6 +21,7 @@ public class HomeController : Controller
     [HttpGet]
     public ActionResult Index(string search)
     {
+        //checking database is not empty 
         if (_context.Employees != null)
         {
             
@@ -39,6 +40,7 @@ public class HomeController : Controller
             return View(Sortedemployees);
         }
         
+        //if database empty return empty view
         return View();
     }
 
@@ -47,7 +49,8 @@ public class HomeController : Controller
     {
 
         try
-        {
+        {   
+            //checking user uploads file or not
             if (postedFile != null)
             {
                 string path = Path.Combine(Environment.WebRootPath, "Uploads");
@@ -70,7 +73,7 @@ public class HomeController : Controller
                     .Where(line => line.Length > 1)
                     .ToList();
 
-                //inserting csv data into sql database 
+                //inserting file data into sql database 
                 foreach (var row in csvData)
                 {
                     if (!string.IsNullOrEmpty(row))
@@ -100,6 +103,7 @@ public class HomeController : Controller
 
                 return RedirectToAction("Index");
             }
+            //if user imports empty upload  
             return RedirectToAction("NoData");
         }
         catch (Exception ex)
@@ -120,11 +124,15 @@ public class HomeController : Controller
     [HttpGet]
     public ActionResult Edit(string Payroll_Number)
     {
+        //getting employee by Payroll_Number
         var employee = _context.Employees.Find(Payroll_Number);
+
+        //checking employee has data
         if(employee == null)
         {
             return NotFound();
         }
+
         return View(employee);
     }
 
