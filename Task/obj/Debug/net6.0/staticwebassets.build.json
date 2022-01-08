@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8WxOzOiuFzyhts1Y7DXxIdh+8PNLQSNk1HGTeqvDDPk=",
+  "Hash": "jpg1mJkuos9uToQ+Xe6fXVXw+BNlvzopcJA0rsn9QgM=",
   "Source": "Task",
   "BasePath": "_content/Task",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\dataset.csv"
+    },
+    {
+      "Identity": "D:\\dotnet\\TaskDemo\\Task\\wwwroot\\Uploads\\project.txt",
+      "SourceId": "Task",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dotnet\\TaskDemo\\Task\\wwwroot\\",
+      "BasePath": "_content/Task",
+      "RelativePath": "Uploads/project.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\project.txt"
     },
     {
       "Identity": "D:\\dotnet\\TaskDemo\\Task\\wwwroot\\Uploads\\ps.txt",
