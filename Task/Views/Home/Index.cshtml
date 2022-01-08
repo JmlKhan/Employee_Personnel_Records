@@ -50,14 +50,14 @@
                 <td>@emp.Payroll_Number</td>
                 <td>@emp.Forenames</td>
                 <td>@emp.Surname</td>
-                <td>@emp.Date_of_Birth</td>
+                <td>@emp.Date_of_Birth.ToString("MM/dd/yyyy")</td>
                 <td>@emp.Telephone</td>
                 <td>@emp.Mobile</td>
                 <td>@emp.Address</td>
                 <td>@emp.Address_2</td>
                 <td>@emp.Postcode </td>
                 <td>@emp.Email_Home</td>
-                <td>@emp.Start_Date</td>
+                <td>@emp.Start_Date.ToString("MM/dd/yyyy")</td>
                 <td>@Html.ActionLink("Edit", "Edit", new { Payroll_Number=@emp.Payroll_Number})</td>
                 </tr>
             }

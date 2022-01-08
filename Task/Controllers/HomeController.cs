@@ -105,7 +105,7 @@ public class HomeController : Controller
         catch (Exception ex)
         {
 
-            return BadRequest($"{ex.Message} \nTry again with correct file format!!!");
+            return BadRequest($"{ex.Message} \nTry again with correct file and format!!!");
         }
 
        

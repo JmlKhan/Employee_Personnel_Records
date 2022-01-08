@@ -1,4 +1,1 @@
-
-2. vaildate input before importing 
-3. Prevent doubling data
 4. Formate dates
